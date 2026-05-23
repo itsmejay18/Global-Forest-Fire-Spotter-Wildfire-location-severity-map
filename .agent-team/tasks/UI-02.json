@@ -1,0 +1,27 @@
+{
+  "id": "UI-02",
+  "title": "Implement Sidebar, Filters, and Statistics",
+  "status": "done",
+  "owner": "ui-ux-worker@global-forest-fire-spotter",
+  "goal": "Create a sidebar with month/severity filters, a legend, and a real-time statistics panel.",
+  "allowedPaths": [
+    "resources/js/Components",
+    "resources/js/Layouts"
+  ],
+  "dependencies": ["UI-01"],
+  "verification": [
+    "npm run build"
+  ],
+  "notes": [
+    "Month-based dropdown filter.",
+    "Severity level toggling.",
+    "Legend for marker sizes and colors.",
+    "Dynamic stats panel (incident count, total burned area)."
+  ],
+  "artifacts": [
+    "resources/js/Components/Sidebar.tsx",
+    "resources/js/app.tsx",
+    "resources/js/Components/FireMap.tsx",
+    "resources/js/types.ts"
+  ]
+}

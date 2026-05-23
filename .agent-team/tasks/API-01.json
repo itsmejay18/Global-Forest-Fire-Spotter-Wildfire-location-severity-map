@@ -1,0 +1,28 @@
+{
+  "id": "API-01",
+  "title": "Backend API for GeoJSON Data",
+  "status": "done",
+  "owner": "api-worker@global-forest-fire-spotter",
+  "goal": "Develop a RESTful API endpoint that returns wildfire incident data in GeoJSON format, supporting month and severity filters.",
+  "allowedPaths": [
+    "app/Http/Controllers",
+    "routes/api.php",
+    "app/Http/Resources"
+  ],
+  "dependencies": ["DATA-01"],
+  "verification": [
+    "php artisan route:list | grep api/incidents"
+  ],
+  "notes": [
+    "Accept 'month', 'year', and 'severity' query parameters.",
+    "Optimize queries using indexed columns.",
+    "Return standard GeoJSON structure (FeatureCollection)."
+  ],
+  "artifacts": [
+    "app/Http/Controllers/Api/WildfireIncidentController.php",
+    "app/Http/Resources/WildfireIncidentResource.php",
+    "routes/api.php",
+    "database/factories/WildfireIncidentFactory.php",
+    "tests/Feature/Api/WildfireIncidentTest.php"
+  ]
+}

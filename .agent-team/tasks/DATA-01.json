@@ -1,0 +1,28 @@
+{
+  "id": "DATA-01",
+  "title": "Database Schema Design & Data Import Pipeline",
+  "status": "done",
+  "owner": "data-worker@global-forest-fire-spotter",
+  "goal": "Create the migration for wildfire incidents and implement a console command to import data from a Kaggle CSV.",
+  "allowedPaths": [
+    "database/migrations",
+    "app/Console/Commands",
+    "app/Models",
+    "storage/app"
+  ],
+  "dependencies": [],
+  "verification": [
+    "php artisan migrate:status",
+    "php artisan fire:import --help"
+  ],
+  "notes": [
+    "Attributes: geographic coordinates, burned area, fire dates, severity classifications, regional info.",
+    "Implement indexing on latitude, longitude, month, year, and severity."
+  ],
+  "artifacts": [
+    "database/migrations/2026_05_23_151429_create_wildfire_incidents_table.php",
+    "app/Models/WildfireIncident.php",
+    "app/Console/Commands/ImportWildfires.php",
+    "storage/app/wildfires_sample.csv"
+  ]
+}

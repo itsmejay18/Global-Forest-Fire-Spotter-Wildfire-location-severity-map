@@ -1,0 +1,31 @@
+{
+  "id": "UI-01",
+  "title": "Setup React TSX and Leaflet Map",
+  "status": "done",
+  "owner": "frontend-map-worker@global-forest-fire-spotter",
+  "goal": "Initialize React with TypeScript, install Leaflet, and display a basic world map with circle markers for wildfire incidents.",
+  "allowedPaths": [
+    "resources/js",
+    "resources/css",
+    "package.json",
+    "vite.config.js"
+  ],
+  "dependencies": ["API-01"],
+  "verification": [
+    "npm run build"
+  ],
+  "notes": [
+    "Use React-Leaflet.",
+    "Markers should be geolocated circle markers.",
+    "Proportional sizing based on burned area.",
+    "Implement basic clustering."
+  ],
+  "artifacts": [
+    "resources/js/app.tsx",
+    "resources/js/Components/FireMap.tsx",
+    "tsconfig.json",
+    "vite.config.js",
+    "package.json",
+    "resources/views/welcome.blade.php"
+  ]
+}

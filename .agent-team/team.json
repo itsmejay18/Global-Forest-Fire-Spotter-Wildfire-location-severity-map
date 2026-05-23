@@ -1,0 +1,79 @@
+{
+  "name": "global-forest-fire-spotter",
+  "mode": "manual-session",
+  "designDocument": ".agent-team/docs/project-design.md",
+  "sharedState": {
+    "tasksPath": ".agent-team/tasks",
+    "mailboxPath": ".agent-team/mailbox",
+    "templatesPath": ".agent-team/templates",
+    "decisionsPath": ".agent-team/decisions.md"
+  },
+  "policies": {
+    "defaultIsolation": "shared-workspace-bounded-paths",
+    "verificationRequired": true,
+    "riskyPaths": [
+      ".env",
+      "config/database.php"
+    ]
+  },
+  "workers": [
+    {
+      "id": "coordinator@global-forest-fire-spotter",
+      "role": "Coordinator",
+      "allowedPaths": [
+        ".agent-team",
+        "README.md",
+        "objectives.txt"
+      ]
+    },
+    {
+      "id": "data-worker@global-forest-fire-spotter",
+      "role": "Data Integration & Management Worker",
+      "template": "data-worker.md",
+      "allowedPaths": [
+        "app/Console/Commands",
+        "app/Jobs",
+        "database/migrations",
+        "database/seeders",
+        "app/Models",
+        "storage/app"
+      ]
+    },
+    {
+      "id": "api-worker@global-forest-fire-spotter",
+      "role": "Backend API Worker",
+      "template": "api-worker.md",
+      "allowedPaths": [
+        "app/Http/Controllers",
+        "routes/api.php",
+        "app/Http/Resources"
+      ]
+    },
+    {
+      "id": "frontend-map-worker@global-forest-fire-spotter",
+      "role": "Frontend Map Visualization Worker",
+      "template": "frontend-map-worker.md",
+      "allowedPaths": [
+        "resources/js",
+        "resources/css"
+      ]
+    },
+    {
+      "id": "ui-ux-worker@global-forest-fire-spotter",
+      "role": "UI/UX & Filter Worker",
+      "template": "ui-ux-worker.md",
+      "allowedPaths": [
+        "resources/js/Components",
+        "resources/js/Layouts"
+      ]
+    },
+    {
+      "id": "verifier@global-forest-fire-spotter",
+      "role": "Verifier",
+      "template": "verifier.md",
+      "allowedPaths": [
+        "tests"
+      ]
+    }
+  ]
+}

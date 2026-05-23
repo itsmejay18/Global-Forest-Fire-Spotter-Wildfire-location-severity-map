@@ -1,0 +1,23 @@
+{
+  "id": "UI-03",
+  "title": "Implement Temporal Trend Visualization",
+  "status": "done",
+  "owner": "ui-ux-worker@global-forest-fire-spotter",
+  "goal": "Add a chart to the sidebar displaying monthly fire incident counts and total burned area trends.",
+  "allowedPaths": [
+    "resources/js/Components"
+  ],
+  "dependencies": ["UI-02"],
+  "verification": [
+    "npm run build"
+  ],
+  "notes": [
+    "Use a charting library like Chart.js or Recharts.",
+    "Bar chart or line graph adjacent to the map (in the sidebar or a bottom panel).",
+    "Display monthly trends."
+  ],
+  "artifacts": [
+    "resources/js/Components/TrendChart.tsx",
+    "resources/js/Components/Sidebar.tsx"
+  ]
+}
